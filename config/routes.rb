@@ -4,27 +4,6 @@ Rails.application.routes.draw do
   root 'trips#index'
   get "/", :controller => "trips", :action => "index"
 
-  # Routes for the Site resource:
-  # CREATE
-  get "/sites/new", :controller => "sites", :action => "new"
-  post "/create_site", :controller => "sites", :action => "create"
-
-  # READ
-  get "/sites", :controller => "sites", :action => "index"
-  get "/sites/:id", :controller => "sites", :action => "show"
-
-  # UPDATE
-  get "/sites/:id/edit", :controller => "sites", :action => "edit"
-  post "/update_site/:id", :controller => "sites", :action => "update"
-
-  # DELETE
-  get "/delete_site/:id", :controller => "sites", :action => "destroy"
-  #------------------------------
-
-  devise_for :users
-  root 'trips#index'
-  get "/", :controller => "trips", :action => "index"
-
   # Routes for the Trip resource:
   # CREATE
   get "/trips/new", :controller => "trips", :action => "new"
@@ -76,7 +55,7 @@ Rails.application.routes.draw do
   get "/delete_city/:id", :controller => "cities", :action => "destroy"
   #------------------------------
 
-# Routes for the Site resource:
+  # Routes for the Site resource:
   # CREATE
   get "/sites/new", :controller => "sites", :action => "new"
   post "/create_site", :controller => "sites", :action => "create"
@@ -91,23 +70,24 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_site/:id", :controller => "sites", :action => "destroy"
+
   #------------------------------
 
   # Routes for the User resource:
   # CREATE
-  get "/users/new", :controller => "users", :action => "new"
-  post "/create_user", :controller => "users", :action => "create"
+  #get "/users/new", :controller => "users", :action => "new"
+  #post "/create_user", :controller => "users", :action => "create"
 
   # READ
-  get "/users", :controller => "users", :action => "index"
-  get "/users/:id", :controller => "users", :action => "show"
+  #get "/users", :controller => "users", :action => "index"
+  #get "/users/:id", :controller => "users", :action => "show"
 
   # UPDATE
-  get "/users/:id/edit", :controller => "users", :action => "edit"
-  post "/update_user/:id", :controller => "users", :action => "update"
+  #get "/users/:id/edit", :controller => "users", :action => "edit"
+  #post "/update_user/:id", :controller => "users", :action => "update"
 
   # DELETE
-  get "/delete_user/:id", :controller => "users", :action => "destroy"
+  #get "/delete_user/:id", :controller => "users", :action => "destroy"
   #------------------------------
 
   # Routes for the Type resource:
