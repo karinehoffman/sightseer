@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  root 'trips#index'
+  get "/", :controller => "trips", :action => "index"
+
   # Routes for the Site resource:
   # CREATE
   get "/sites/new", :controller => "sites", :action => "new"

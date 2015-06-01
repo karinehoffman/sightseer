@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sightseer</title>
+  <title >Sightseer</title>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -40,24 +40,22 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/sites">Sites</a></li>
-          <li><a href="/trips">Trips</a></li>
-          <li><a href="/countries">Countries</a></li>
-          <li><a href="/cities">Cities</a></li>
-          <li><a href="/users">Users</a></li>
-          <li><a href="/types">Types</a></li>
+          <li><a href="/trips/new">Create Trip</a></li>
+          <li><a href="/countries/new">Add Countries</a></li>
+          <li><a href="/cities/new">Add Cities</a></li>
+          <li><a href="/sites/new"> Add Sites</a></li>
+          <li><a href="/types/index">Update Types</a></li>
           <li><a href="#">About</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <% if 1 > 2 %>
-            <li><a href="/users/edit">Oscar the Grouch</a></li>
-            <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Sign out</a></li>
+          <% if current_user.present? %>
+            <li><a href="/users/edit">Profile</a></li>
+            <li><a href="/users/sign_out" data-method="delete">Sign out</a></li>
           <% else %>
-            <li><a href="/users/sign_up">Sign up</a></li>
             <li><a href="/users/sign_in">Sign in</a></li>
+            <li><a href="/users/sign_up">Sign up</a></li>
           <% end %>
-        </ul>
       </div><!-- /.navbar-collapse -->
     </div>
   </nav>
