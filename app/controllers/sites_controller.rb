@@ -13,8 +13,11 @@ class SitesController < ApplicationController
 
   def create
     @site = Site.new
+    @site.photo = params[:photo]
     @site.name = params[:name]
-    @site.city = params[:city]
+    @site.description = params[:description]
+    @site.city_id = params[:city_id]
+    @site.type_id = params[:type_id]
 
     if @site.save
       redirect_to "/sites", :notice => "Site created successfully."
@@ -30,8 +33,11 @@ class SitesController < ApplicationController
   def update
     @site = Site.find(params[:id])
 
+    @site.photo = params[:photo]
     @site.name = params[:name]
-    @site.city = params[:city]
+    @site.description = params[:description]
+    @site.city_id = params[:city_id]
+    @site.type_id = params[:type_id]
 
     if @site.save
       redirect_to "/sites", :notice => "Site updated successfully."

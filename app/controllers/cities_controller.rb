@@ -13,6 +13,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new
+    @city.country_id = params[:country_id]
     @city.name = params[:name]
 
     if @city.save
@@ -29,8 +30,8 @@ class CitiesController < ApplicationController
   def update
     @city = City.find(params[:id])
 
+    @city.country_id = params[:country_id]
     @city.name = params[:name]
-    @city.cuisine_id = params[:cuisine_id]
 
     if @city.save
       redirect_to "/cities", :notice => "City updated successfully."

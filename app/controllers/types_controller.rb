@@ -1,4 +1,4 @@
-class typesController < ApplicationController
+class TypesController < ApplicationController
   def index
     @types = Type.all
   end
@@ -13,8 +13,7 @@ class typesController < ApplicationController
 
   def create
     @type = Type.new
-    @type.name = params[:name]
-    @type.city = params[:city]
+    @type.type = params[:type]
 
     if @type.save
       redirect_to "/types", :notice => "Type created successfully."
@@ -30,8 +29,7 @@ class typesController < ApplicationController
   def update
     @type = Type.find(params[:id])
 
-    @type.name = params[:name]
-    @type.city = params[:city]
+    @type.type = params[:type]
 
     if @type.save
       redirect_to "/types", :notice => "Type updated successfully."

@@ -4,29 +4,26 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">City #<%= @city.id %></h3>
+        <h3 class="panel-title">Type #<%= @type.id %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
-              <dt>Country</dt>
-              <dd><%= @city.country_id %></dd>
-
-              <dt>Name</dt>
-              <dd><%= @city.name %></dd>
+              <dt>Type</dt>
+              <dd><%= @type.type %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">
-              <a href="/cities" class="btn btn-primary">
+              <a href="/types" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
               </a>
 
-              <a href="/cities/<%= @city.id %>/edit" class="btn btn-warning">
+              <a href="/types/<%= @type.id %>/edit" class="btn btn-warning">
                 <i class="fa fa-edit"></i>
               </a>
 
-              <a href="/delete_city/<%= @city.id %>" class="btn btn-danger" rel="nofollow">
+              <a href="/delete_type/<%= @type.id %>" class="btn btn-danger" rel="nofollow">
                 <i class="fa fa-trash-o"></i>
               </a>
             </div>

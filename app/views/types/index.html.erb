@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Cities
-    <a href="/cities/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
+    Types
+    <a href="/types/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
 </div>
 
@@ -9,38 +9,35 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <input type="text" id="quicksearch" placeholder="Search Cities (start typing)" class="form-control">
+    <input type="text" id="quicksearch" placeholder="Search Types (start typing)" class="form-control">
   </div>
 </div>
 
 <hr>
 
 <div class="row isotope-container">
-<% @cities.each do |city| %>
+<% @types.each do |type| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">City #<%= city.id %></h3>
+        <h3 class="panel-title">Type #<%= type.id %></h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Country</dt>
-          <dd><%= city.country_id %></dd>
-
-          <dt>Name</dt>
-          <dd><%= city.name %></dd>
+          <dt>Type</dt>
+          <dd><%= type.type %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
-          <a href="/cities/<%= city.id %>" class="btn btn-primary">
+          <a href="/types/<%= type.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
 
-          <a href="/cities/<%= city.id %>/edit" class="btn btn-warning">
+          <a href="/types/<%= type.id %>/edit" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
 
-          <a href="/delete_city/<%= city.id %>" class="btn btn-danger" rel="nofollow">
+          <a href="/delete_type/<%= type.id %>" class="btn btn-danger" rel="nofollow">
             <i class="fa fa-trash-o"></i>
           </a>
         </div>

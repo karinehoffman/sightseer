@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
 
+  # Routes for the Site resource:
+  # CREATE
+  get "/sites/new", :controller => "sites", :action => "new"
+  post "/create_site", :controller => "sites", :action => "create"
+
+  # READ
+  get "/sites", :controller => "sites", :action => "index"
+  get "/sites/:id", :controller => "sites", :action => "show"
+
+  # UPDATE
+  get "/sites/:id/edit", :controller => "sites", :action => "edit"
+  post "/update_site/:id", :controller => "sites", :action => "update"
+
+  # DELETE
+  get "/delete_site/:id", :controller => "sites", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   root 'trips#index'
   get "/", :controller => "trips", :action => "index"

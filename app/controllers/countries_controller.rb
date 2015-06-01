@@ -30,8 +30,6 @@ class CountriesController < ApplicationController
     @country = Country.find(params[:id])
 
     @country.name = params[:name]
-    @country.address = params[:address]
-    @country.neighborhood_id = params[:neighborhood_id]
 
     if @country.save
       redirect_to "/countries", :notice => "Country updated successfully."
