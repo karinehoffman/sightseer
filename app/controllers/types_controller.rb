@@ -16,7 +16,7 @@ class TypesController < ApplicationController
     @type.name = params[:type]
 
     if @type.save
-      redirect_to "/types", :notice => "Type created successfully."
+      redirect_to "/types", :notice => "Site type created successfully."
     else
       render 'new'
     end
@@ -32,7 +32,7 @@ class TypesController < ApplicationController
     @type.name = params[:type]
 
     if @type.save
-      redirect_to "/types", :notice => "Type updated successfully."
+      redirect_to "/types", :notice => "Site type updated successfully."
     else
       render 'edit'
     end
@@ -43,6 +43,6 @@ class TypesController < ApplicationController
 
     @type.destroy
 
-    redirect_to "/types", :notice => "Type deleted."
+    redirect_to "/types", :notice => "Site type deleted."
   end
 end
