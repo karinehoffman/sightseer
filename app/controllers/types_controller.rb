@@ -13,7 +13,7 @@ class TypesController < ApplicationController
 
   def create
     @type = Type.new
-    @type.type = params[:type]
+    @type.name = params[:type]
 
     if @type.save
       redirect_to "/types", :notice => "Type created successfully."
@@ -29,7 +29,7 @@ class TypesController < ApplicationController
   def update
     @type = Type.find(params[:id])
 
-    @type.type = params[:type]
+    @type.name = params[:type]
 
     if @type.save
       redirect_to "/types", :notice => "Type updated successfully."
