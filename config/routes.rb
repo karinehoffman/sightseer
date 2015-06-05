@@ -1,5 +1,73 @@
 Rails.application.routes.draw do
 
+  # Routes for the Tripuser resource:
+  # CREATE
+  get "/tripusers/new", :controller => "tripusers", :action => "new"
+  post "/create_tripuser", :controller => "tripusers", :action => "create"
+
+  # READ
+  get "/tripusers", :controller => "tripusers", :action => "index"
+  get "/tripusers/:id", :controller => "tripusers", :action => "show"
+
+  # UPDATE
+  get "/tripusers/:id/edit", :controller => "tripusers", :action => "edit"
+  post "/update_tripuser/:id", :controller => "tripusers", :action => "update"
+
+  # DELETE
+  get "/delete_tripuser/:id", :controller => "tripusers", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Destinationcity resource:
+  # CREATE
+  get "/destinationcities/new", :controller => "destinationcities", :action => "new"
+  post "/create_destinationcity", :controller => "destinationcities", :action => "create"
+
+  # READ
+  get "/destinationcities", :controller => "destinationcities", :action => "index"
+  get "/destinationcities/:id", :controller => "destinationcities", :action => "show"
+
+  # UPDATE
+  get "/destinationcities/:id/edit", :controller => "destinationcities", :action => "edit"
+  post "/update_destinationcity/:id", :controller => "destinationcities", :action => "update"
+
+  # DELETE
+  get "/delete_destinationcity/:id", :controller => "destinationcities", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Destinationsite resource:
+  # CREATE
+  get "/destinationsites/new", :controller => "destinationsites", :action => "new"
+  post "/create_destinationsite", :controller => "destinationsites", :action => "create"
+
+  # READ
+  get "/destinationsites", :controller => "destinationsites", :action => "index"
+  get "/destinationsites/:id", :controller => "destinationsites", :action => "show"
+
+  # UPDATE
+  get "/destinationsites/:id/edit", :controller => "destinationsites", :action => "edit"
+  post "/update_destinationsite/:id", :controller => "destinationsites", :action => "update"
+
+  # DELETE
+  get "/delete_destinationsite/:id", :controller => "destinationsites", :action => "destroy"
+  #------------------------------
+
+  # Routes for the Destination resource:
+  # CREATE
+  get "/destinations/new", :controller => "destinations", :action => "new"
+  post "/create_destination", :controller => "destinations", :action => "create"
+
+  # READ
+  get "/destinations", :controller => "destinations", :action => "index"
+  get "/destinations/:id", :controller => "destinations", :action => "show"
+
+  # UPDATE
+  get "/destinations/:id/edit", :controller => "destinations", :action => "edit"
+  post "/update_destination/:id", :controller => "destinations", :action => "update"
+
+  # DELETE
+  get "/delete_destination/:id", :controller => "destinations", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   root 'trips#index'
   get "/", :controller => "trips", :action => "index"

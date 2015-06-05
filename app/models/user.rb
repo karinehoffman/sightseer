@@ -6,5 +6,7 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  #has_and_belongs_to_many :trips
+
+  has_many :tripusers, :dependent => :destroy
+  has_many :trips, :through => :tripusers
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601183116) do
+ActiveRecord::Schema.define(version: 20150604211128) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "country_id"
@@ -26,12 +26,52 @@ ActiveRecord::Schema.define(version: 20150601183116) do
     t.datetime "updated_at"
   end
 
+  create_table "destinationcities", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "destinations", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.integer  "country_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "destinationsites", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.integer  "country_id"
+    t.integer  "city_id"
+    t.integer  "site_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sites", force: :cascade do |t|
     t.string   "photo"
     t.string   "name"
     t.text     "description"
     t.integer  "city_id"
     t.string   "type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tripusers", force: :cascade do |t|
+    t.integer  "trip_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

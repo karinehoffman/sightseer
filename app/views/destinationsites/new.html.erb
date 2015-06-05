@@ -1,7 +1,7 @@
 <!-- Validation failure messages -->
 
-<% if @trip.errors.any? %>
-  <% @trip.errors.full_messages.each do |message| %>
+<% if @destinationsite.errors.any? %>
+  <% @destinationsite.errors.full_messages.each do |message| %>
     <div class="alert alert-dismissable alert-danger">
       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <%= message %>
@@ -15,60 +15,60 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Add Trip</h3>
+        <h3 class="panel-title">Add Destinationsite</h3>
       </div>
       <div class="panel-body">
-        <form action="/create_trip" method="post" class="form-horizontal">
+        <form action="/create_destinationsite" method="post" class="form-horizontal">
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-          <!-- Label and input for name -->
+          <!-- Label and input for trip_id -->
           <div class="form-group">
-            <label for="name" class="col-sm-2 control-label">
-              Name
+            <label for="trip_id" class="col-sm-2 control-label">
+              Trip
             </label>
             <div class="col-sm-10">
-              <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @trip.name %>">
+              <input type="text" id="trip_id" name="trip_id" placeholder="Trip" class="form-control" value="<%= @destinationsite.trip_id %>">
             </div>
           </div>
 
-          <!-- Label and input for description -->
+          <!-- Label and input for country_id -->
           <div class="form-group">
-            <label for="description" class="col-sm-2 control-label">
-              Description
+            <label for="country_id" class="col-sm-2 control-label">
+              Country
             </label>
             <div class="col-sm-10">
-              <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @trip.description %></textarea>
+              <input type="text" id="country_id" name="country_id" placeholder="Country" class="form-control" value="<%= @destinationsite.country_id %>">
             </div>
           </div>
 
-          <!-- Label and input for start_date -->
+          <!-- Label and input for city_id -->
           <div class="form-group">
-            <label for="start_date" class="col-sm-2 control-label">
-              Start date
+            <label for="city_id" class="col-sm-2 control-label">
+              City
             </label>
             <div class="col-sm-10">
-              <input type="text" id="start_date" name="start_date" placeholder="Start date" class="form-control" value="<%= @trip.start_date %>">
+              <input type="text" id="city_id" name="city_id" placeholder="City" class="form-control" value="<%= @destinationsite.city_id %>">
             </div>
           </div>
 
-          <!-- Label and input for end_date -->
+          <!-- Label and input for site_id -->
           <div class="form-group">
-            <label for="end_date" class="col-sm-2 control-label">
-              End date
+            <label for="site_id" class="col-sm-2 control-label">
+              Site
             </label>
             <div class="col-sm-10">
-              <input type="text" id="end_date" name="end_date" placeholder="End date" class="form-control" value="<%= @trip.end_date %>">
+              <input type="text" id="site_id" name="site_id" placeholder="Site" class="form-control" value="<%= @destinationsite.site_id %>">
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button class="btn btn-success">
-                Create Trip
+                Create Destinationsite
               </button>
               or
-              <a href="/trips">Cancel</a>
+              <a href="/destinationsites">Cancel</a>
             </div>
           </div>
         </form>
