@@ -4,20 +4,20 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Destinationcity #<%= @destinationcity.id %></h3>
+        <h3 class="panel-title">Destination-city #<%= @destinationcity.id %></h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
               <dt>Trip</dt>
-              <dd><%= @destinationcity.trip_id %></dd>
+              <dd><%= @destinationcity.trip.name %></dd>
 
               <dt>Country</dt>
-              <dd><%= @destinationcity.country_id %></dd>
+              <dd><%= @destinationcity.country.name %></dd>
 
               <dt>City</dt>
-              <dd><%= @destinationcity.city_id %></dd>
+              <dd><%= @destinationcity.city.name %></dd>
 
             </dl>
             <div class="btn-group btn-group-justified">

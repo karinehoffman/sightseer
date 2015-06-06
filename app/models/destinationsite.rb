@@ -1,6 +1,5 @@
 class Destinationsite < ActiveRecord::Base
-  validates :trip_id, :presence => true, :uniqueness => true
-  validates :site_id, :presence => true, :uniqueness => { :scope => :city }
+  validates :site_id, :presence => true, :uniqueness => { :scope => :trip_id }
 
   belongs_to :trip
   belongs_to :site

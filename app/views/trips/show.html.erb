@@ -9,7 +9,7 @@
   <div class="col-sm-5 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @trip.name %> Trip</h3>
+        <h3 class="panel-title"><%= @trip.name %> Trip Details</h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -43,8 +43,8 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-sm-5">
+<div class="row isotope-container">
+  <div class="col-sm-5 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Countries to Visit</h3>
@@ -70,6 +70,41 @@
         </div>
         <div class="btn-group btn-group-justified">
           <a href="/destinations/new" class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+          </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row isotope-container">
+  <div class="col-sm-5 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Cities to Visit</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table">
+              <tbody>
+                <% @trip.destinationcities.each do |destinationcity| %>
+                  <tr>
+                    <td><%= destinationcity.city.name %>, <%= destinationcity.country.name %> </td>
+                    <td>
+                      <a href="/delete_destinationcity/<%= destinationcity.id %>" class="btn btn-danger" rel="nofollow">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="btn-group btn-group-justified">
+          <a href="/destinationcities/new" class="btn btn-primary">
             <i class="fa fa-plus"></i>
           </a>
       </div>
