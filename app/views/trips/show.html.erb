@@ -6,7 +6,7 @@
 </ol>
 
 <div class="row isotope-container">
-  <div class="col-sm-4 isotope-item">
+  <div class="col-sm-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%= @trip.name %> Trip Details</h3>
@@ -14,7 +14,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
-            <dl class="dl-horizontal">
+            <dl class="dl">
 
               <dt>Description</dt>
               <dd><%= @trip.description %></dd>
@@ -42,7 +42,7 @@
     </div>
   </div>
 
-  <div class="col-sm-8 isotope-item">
+  <div class="col-sm-9 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Sites to See</h3>
@@ -79,7 +79,7 @@
 
 
 <div class="row isotope-container">
-  <div class="col-sm-4 isotope-item">
+  <div class="col-sm-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Travelers</h3>
@@ -114,7 +114,7 @@
 </div>
 
 <div class="row isotope-container">
-  <div class="col-sm-4 isotope-item">
+  <div class="col-sm-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Countries to Visit</h3>
@@ -122,12 +122,12 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
-            <table class="table">
+            <table class="table borderless">
               <tbody>
                 <% @trip.destinations.each do |destination| %>
                   <tr>
-                    <td><%= destination.country.name %></td>
-                    <td>
+                    <td style="border-top: none;"><%= destination.country.name %></td>
+                    <td style="border-top: none;">
                       <a href="/delete_destination/<%= destination.id %>" class="btn btn-danger pull-right" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
@@ -174,7 +174,7 @@
 </div>
 
 <div class="row isotope-container">
-  <div class="col-sm-4 isotope-item">
+  <div class="col-sm-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Cities to Visit</h3>
