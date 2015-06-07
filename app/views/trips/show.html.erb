@@ -41,43 +41,8 @@
       </div>
     </div>
   </div>
-<div class="col-sm-4 isotope-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= @trip.name %> Trip Details</h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12">
-            <dl class="dl-horizontal">
 
-              <dt>Description</dt>
-              <dd><%= @trip.description %></dd>
-
-              <dt>Start date</dt>
-              <dd><%= @trip.start_date %></dd>
-
-              <dt>End date</dt>
-              <dd><%= @trip.end_date %></dd>
-
-            </dl>
-            <div class="btn-group btn-group-justified">
-
-              <a href="/trips/<%= @trip.id %>/edit" class="btn btn-warning">
-                <i class="fa fa-edit"></i>
-              </a>
-
-              <a href="/delete_trip/<%= @trip.id %>" class="btn btn-danger" rel="nofollow">
-                <i class="fa fa-trash-o"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4 isotope-item">
+  <div class="col-sm-8 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Sites to See</h3>
@@ -87,11 +52,12 @@
           <div class="col-md-12">
             <table class="table">
               <tbody>
-                <% @trip.destinationsites.each do |destinationsite| %>
+                <% @trip.sites.each do |site| %>
                   <tr>
-                    <td><%= user.first_name %> <%= user.last_name %></td>
+                    <td><%= site.name %></td>
+                    <td><%= site.type %></td>
                     <td>
-                      <a href="/delete_tripuser/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+                      <a href="/delete_site/<%= site.id %>" class="btn btn-danger" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>
@@ -102,7 +68,7 @@
           </div>
         </div>
         <div class="btn-group btn-group-justified">
-          <a href="/tripusers/new" class="btn btn-primary">
+          <a href="/sites/new" class="btn btn-primary">
             <i class="fa fa-plus"></i>
           </a>
       </div>
@@ -172,12 +138,37 @@
             </table>
           </div>
         </div>
-        <div class="btn-group btn-group-justified">
-          <a href="/destinations/new" class="btn btn-primary">
-            <i class="fa fa-plus"></i>
-          </a>
-      </div>
-      </div>
+
+        <div>
+          <h3 class="panel-title">Add Country</h3>
+        </div>
+        <div class="panel-body">
+          <form action="/create_destination" method="post" class="form-horizontal">
+ <!-- Hidden input for authenticity token to protect from forgery -->
+            <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+            <!-- Label and input for country_id -->
+            <div class="form-group">
+              <label for="country_id" class="col-sm-2 control-label">
+                Country
+              </label>
+              <div class="col-sm-10">
+
+                <%#select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name, @destination.country_id), :class => "form-control") %>
+              </div>
+            </div>
+
+            <div class="form-group justified">
+              <div class="col-sm-2 col-sm-10">
+                <button class="btn btn-success">
+                  Create Destination
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
     </div>
   </div>
 </div>
@@ -193,11 +184,11 @@
           <div class="col-md-12">
             <table class="table">
               <tbody>
-                <% @trip.destinationcities.each do |destinationcity| %>
+                <% @trip.cities.each do |city| %>
                   <tr>
-                    <td><%= destinationcity.city.name %>, <%= destinationcity.country.name %> </td>
+                    <td><%= city.name %>, <%= city.country.name %> </td>
                     <td>
-                      <a href="/delete_destinationcity/<%= destinationcity.id %>" class="btn btn-danger" rel="nofollow">
+                      <a href="/delete_destinationcity/<%= city.id %>" class="btn btn-danger" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>
@@ -208,7 +199,7 @@
           </div>
         </div>
         <div class="btn-group btn-group-justified">
-          <a href="/destinationcities/new" class="btn btn-primary">
+          <a href="/cities/new" class="btn btn-primary">
             <i class="fa fa-plus"></i>
           </a>
       </div>

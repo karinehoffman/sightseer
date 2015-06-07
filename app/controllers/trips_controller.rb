@@ -5,6 +5,17 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+
+    #creating new destination
+    #@destination = Destination.new
+    #@destination.trip_id = :id
+    #@destination.country_id = params[:country_id]
+
+    #if @destination.save
+     # redirect_to "/trips/:id", :notice => "Destination created successfully."
+    #else
+     # render 'new'
+    #end
   end
 
   def new

@@ -7,10 +7,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-9">
+        <div class="col-sm-11">
           <table class="table">
             <thead>
               <tr>
+                <th class="col-sm-2">Trip</th>
                 <th class="col-sm-2">Site Name</th>
                 <th class="col-sm-2">City</th>
                 <th class="col-sm-2">Site Type</th>
@@ -22,6 +23,7 @@
             <tbody>
               <% @sites.each do |site| %>
                 <tr>
+                  <td><%= site.trip.name %></td>
                   <td><%= site.name %></td>
                   <td><%= site.city.name %></td>
                   <td><%= site.type.name %></td>
