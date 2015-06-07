@@ -149,17 +149,16 @@
 
             <!-- Label and input for country_id -->
             <div class="form-group">
-              <label for="country_id" class="col-sm-2 control-label">
+              <label for="country_id" class="col-sm-3 control-label">
                 Country
               </label>
-              <div class="col-sm-10">
-
-                <%#select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name, @destination.country_id), :class => "form-control") %>
+              <div class="col-sm-8">
+                <%=select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name, 1), :class => "form-control") %>
               </div>
             </div>
 
             <div class="form-group">
-              <div class="col-sm-2 col-sm-10">
+              <div class="col-sm-2 col-sm-8">
                 <button class="btn btn-success">
                   Create Destination
                 </button>
