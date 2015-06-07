@@ -18,7 +18,7 @@ class DestinationsController < ApplicationController
 
     if @destination.save
 
-      redirect_to "/trips/@destination.trip_id", :notice => "Destination created successfully."
+      redirect_to "/trips/#{@destination.trip_id}", :notice => "Destination created successfully."
     else
       render 'new'
     end
