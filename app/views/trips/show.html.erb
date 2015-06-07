@@ -6,7 +6,7 @@
 </ol>
 
 <div class="row isotope-container">
-  <div class="col-sm-5 isotope-item">
+  <div class="col-sm-4 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title"><%= @trip.name %> Trip Details</h3>
@@ -41,10 +41,114 @@
       </div>
     </div>
   </div>
+<div class="col-sm-4 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @trip.name %> Trip Details</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+
+              <dt>Description</dt>
+              <dd><%= @trip.description %></dd>
+
+              <dt>Start date</dt>
+              <dd><%= @trip.start_date %></dd>
+
+              <dt>End date</dt>
+              <dd><%= @trip.end_date %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+
+              <a href="/trips/<%= @trip.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_trip/<%= @trip.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Sites to See</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table">
+              <tbody>
+                <% @trip.destinationsites.each do |destinationsite| %>
+                  <tr>
+                    <td><%= user.first_name %> <%= user.last_name %></td>
+                    <td>
+                      <a href="/delete_tripuser/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="btn-group btn-group-justified">
+          <a href="/tripusers/new" class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+          </a>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row isotope-container">
+  <div class="col-sm-4 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Travelers</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table">
+              <tbody>
+                <% @trip.tripusers.each do |user| %>
+                  <tr>
+                    <td><%= user.first_name %> <%= user.last_name %></td>
+                    <td>
+                      <a href="/delete_tripuser/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="btn-group btn-group-justified">
+          <a href="/tripusers/new" class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+          </a>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="row isotope-container">
-  <div class="col-sm-5 isotope-item">
+  <div class="col-sm-4 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Countries to Visit</h3>
@@ -79,7 +183,7 @@
 </div>
 
 <div class="row isotope-container">
-  <div class="col-sm-5 isotope-item">
+  <div class="col-sm-4 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">Cities to Visit</h3>

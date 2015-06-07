@@ -17,40 +17,6 @@ Rails.application.routes.draw do
   get "/delete_tripuser/:id", :controller => "tripusers", :action => "destroy"
   #------------------------------
 
-  # Routes for the Destinationcity resource:
-  # CREATE
-  get "/destinationcities/new", :controller => "destinationcities", :action => "new"
-  post "/create_destinationcity", :controller => "destinationcities", :action => "create"
-
-  # READ
-  get "/destinationcities", :controller => "destinationcities", :action => "index"
-  get "/destinationcities/:id", :controller => "destinationcities", :action => "show"
-
-  # UPDATE
-  get "/destinationcities/:id/edit", :controller => "destinationcities", :action => "edit"
-  post "/update_destinationcity/:id", :controller => "destinationcities", :action => "update"
-
-  # DELETE
-  get "/delete_destinationcity/:id", :controller => "destinationcities", :action => "destroy"
-  #------------------------------
-
-  # Routes for the Destinationsite resource:
-  # CREATE
-  get "/destinationsites/new", :controller => "destinationsites", :action => "new"
-  post "/create_destinationsite", :controller => "destinationsites", :action => "create"
-
-  # READ
-  get "/destinationsites", :controller => "destinationsites", :action => "index"
-  get "/destinationsites/:id", :controller => "destinationsites", :action => "show"
-
-  # UPDATE
-  get "/destinationsites/:id/edit", :controller => "destinationsites", :action => "edit"
-  post "/update_destinationsite/:id", :controller => "destinationsites", :action => "update"
-
-  # DELETE
-  get "/delete_destinationsite/:id", :controller => "destinationsites", :action => "destroy"
-  #------------------------------
-
   # Routes for the Destination resource:
   # CREATE
   get "/destinations/new", :controller => "destinations", :action => "new"
