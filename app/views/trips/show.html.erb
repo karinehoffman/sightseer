@@ -57,7 +57,7 @@
                     <td><%= site.name %></td>
                     <td><%= site.type %></td>
                     <td>
-                      <a href="/delete_site/<%= site.id %>" class="btn btn-danger" rel="nofollow">
+                      <a href="/delete_site/<%= site.id %>" class="btn btn-sm btn-danger" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>
@@ -93,7 +93,7 @@
                   <tr>
                     <td><%= user.first_name %> <%= user.last_name %></td>
                     <td>
-                      <a href="/delete_tripuser/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+                      <a href="/delete_tripuser/<%= user.id %>" class="btn btn-sm btn-danger" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>
@@ -128,7 +128,7 @@
                   <tr>
                     <td style="border-top: none;"><%= destination.country.name %></td>
                     <td style="border-top: none;">
-                      <a href="/delete_destination/<%= destination.id %>" class="btn btn-danger pull-right" rel="nofollow">
+                      <a href="/delete_destination/<%= destination.id %>" class="btn btn-sm btn-danger pull-right" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>
@@ -188,7 +188,7 @@
                   <tr>
                     <td><%= city.name %>, <%= city.country.name %> </td>
                     <td>
-                      <a href="/delete_destinationcity/<%= city.id %>" class="btn btn-danger" rel="nofollow">
+                      <a href="/delete_destinationcity/<%= city.id %>" class="btn btn-sm btn-danger" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>
