@@ -46,7 +46,7 @@
               Country
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name, @city.country_id), :class => "form-control") %>
+              <%= select_tag(:country_id, options_from_collection_for_select(@city.trip.countries, :id, :name, @city.country_id), :class => "form-control") %>
             </div>
           </div>
 

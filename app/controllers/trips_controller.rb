@@ -19,7 +19,7 @@ class TripsController < ApplicationController
     @trip.end_date = Chronic.parse(params[:end_date])
 
     if @trip.save
-      redirect_to "/trips", :notice => "Trip created successfully."
+      redirect_to "/trips/#{@trip.id}", :notice => "Trip created successfully."
     else
       render 'new'
     end
@@ -38,7 +38,7 @@ class TripsController < ApplicationController
     @trip.end_date = Chronic.parse(params[:end_date])
 
     if @trip.save
-      redirect_to "/trips", :notice => "Trip updated successfully."
+      redirect_to "/trips/#{@trip.id}", :notice => "Trip updated successfully."
     else
       render 'edit'
     end

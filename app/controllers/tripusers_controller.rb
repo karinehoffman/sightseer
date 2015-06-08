@@ -17,9 +17,9 @@ class TripusersController < ApplicationController
     @tripuser.user_id = params[:user_id]
 
     if @tripuser.save
-      redirect_to "/tripusers", :notice => "Tripuser created successfully."
+      redirect_to "/trips/#{@tripuser.trip_id}", :notice => "Traveler added successfully."
     else
-      render 'new'
+      redirect_to "/trips/#{@tripuser.trip_id}", :notice => "Traveler already exists."
     end
   end
 
@@ -34,9 +34,9 @@ class TripusersController < ApplicationController
     @tripuser.user_id = params[:user_id]
 
     if @tripuser.save
-      redirect_to "/tripusers", :notice => "Tripuser updated successfully."
+      redirect_to "/trips/#{@tripuser.trip_id}", :notice => "Traveler updated successfully."
     else
-      render 'edit'
+      render 'edit', :notice => "Traveler already exists."
     end
   end
 
@@ -45,6 +45,6 @@ class TripusersController < ApplicationController
 
     @tripuser.destroy
 
-    redirect_to "/tripusers", :notice => "Tripuser deleted."
+    redirect_to "/trips/#{@tripuser.trip_id}", :notice => "Tripuser deleted."
   end
 end

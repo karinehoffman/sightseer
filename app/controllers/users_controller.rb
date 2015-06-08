@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
-    @user.username = params[:username]
+    @user.name = params[:name]
 
     if @user.save
       redirect_to "/users", :notice => "User created successfully."
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    @user.username = params[:username]
+    @user.name = params[:name]
 
     if @user.save
       redirect_to "/users", :notice => "User updated successfully."
