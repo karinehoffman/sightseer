@@ -7,7 +7,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     #creating new destination
-    #@destination = Destination.new
+    # @destination = Destination.new
     #@destination.trip_id = :id
     #@destination.country_id = params[:country_id]
 

@@ -148,6 +148,8 @@
  <!-- Hidden input for authenticity token to protect from forgery -->
             <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
+            <input type="hidden" name="trip_id" value="<%= @trip.id %>">
+
             <!-- Label and input for country_id -->
             <div class="form-group">
               <label for="country_id" class="col-sm-3 control-label">
