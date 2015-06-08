@@ -7,20 +7,22 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-12">
 
           <table class="table">
             <thead>
               <tr>
-                <th class="col-sm-2">Trip</th>
-                <th class="col-sm-1">Show/Edit Trip</th>
-                <th class="col-sm-1">Delete</th>
+                <th class="col-sm-3">Trip</th>
+                <th class="col-sm-5">Cities to Visit</th>
+                <th class="col-sm-2">Show/Edit Trip</th>
+                <th class="col-sm-2">Delete</th>
               </tr>
             </thead>
             <tbody>
               <% @trips.each do |trip| %>
                 <tr>
                   <td><%= trip.name %></td>
+                  <td><%# trip.countries.name %></td>
                   <td>
                     <a href="/trips/<%= trip.id %>" class="btn btn-primary">
                       <i class="fa fa-search-plus"></i>
