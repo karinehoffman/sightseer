@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150607210951) do
+ActiveRecord::Schema.define(version: 20150608201114) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "country_id"
@@ -80,8 +80,7 @@ ActiveRecord::Schema.define(version: 20150607210951) do
     t.string   "last_sign_in_ip"
     t.string   "username"
     t.string   "avatar_url"
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
