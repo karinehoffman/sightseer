@@ -21,9 +21,9 @@ class SitesController < ApplicationController
     @site.trip_id = params[:trip_id]
 
     if @site.save
-      redirect_to "/sites", :notice => "Site created successfully."
+      redirect_to "/trips/#{@site.trip_id}", :notice => "Site created successfully."
     else
-      render 'new'
+      redirect_to "/trips/#{@site.trip_id}", :notice => "Site already exists."
     end
   end
 
@@ -42,9 +42,9 @@ class SitesController < ApplicationController
     @site.trip_id = params[:trip_id]
 
     if @site.save
-      redirect_to "/sites", :notice => "Site updated successfully."
+      redirect_to "/trips/#{@site.trip_id}", :notice => "Site updated successfully."
     else
-      render 'edit'
+      render 'edit', :notice => "Site already exists."
     end
   end
 
@@ -53,6 +53,6 @@ class SitesController < ApplicationController
 
     @site.destroy
 
-    redirect_to "/sites", :notice => "Site deleted."
+    redirect_to "/trips/#{@site.trip_id}", :notice => "Site deleted."
   end
 end

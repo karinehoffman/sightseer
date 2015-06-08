@@ -9,18 +9,26 @@
   <% end %>
 <% end %>
 
+<ol class="breadcrumb">
+  <li><a href="/trips">Trips</a></li>
+  <li><a href="/trips/<%= @site.trip_id%>"><%= @site.trip.name %></a></li>
+  <li class="active">Edit Site</li>
+</ol>
+
 <!-- Responsive panel example -->
 
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Edit Site #<%= @site.id %></h3>
+        <h3 class="panel-title">Edit Site for <%= @site.trip.name %> Trip</h3>
       </div>
       <div class="panel-body">
         <form action="/update_site/<%= @site.id %>" method="post" class="form-horizontal">
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+          <input type="hidden" name="trip_id" value="<%= @site.trip_id %>">
 
           <!-- Label and input for name -->
           <div class="form-group">
@@ -78,7 +86,7 @@
                 Update Site
               </button>
               or
-              <a href="/sites/<%= @site.id %>">Cancel</a>
+              <a href="/trips/<%= @site.trip_id%>">Cancel</a>
             </div>
           </div>
         </form>
