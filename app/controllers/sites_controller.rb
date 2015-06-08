@@ -18,6 +18,7 @@ class SitesController < ApplicationController
     @site.description = params[:description]
     @site.city_id = params[:city_id]
     @site.type_id = params[:type_id]
+    @site.trip_id = params[:trip_id]
 
     if @site.save
       redirect_to "/sites", :notice => "Site created successfully."
@@ -38,6 +39,7 @@ class SitesController < ApplicationController
     @site.description = params[:description]
     @site.city_id = params[:city_id]
     @site.type_id = params[:type_id]
+    @site.trip_id = params[:trip_id]
 
     if @site.save
       redirect_to "/sites", :notice => "Site updated successfully."

@@ -13,7 +13,7 @@
               <tr>
                 <th class="col-sm-2">Trip</th>
                 <th class="col-sm-2">Site Name</th>
-                <th class="col-sm-2">City</th>
+                <th class="col-sm-2">City, Country</th>
                 <th class="col-sm-2">Site Type</th>
                 <th class="col-sm-1">Show</th>
                 <th class="col-sm-1">Edit</th>
@@ -25,7 +25,9 @@
                 <tr>
                   <td><%= site.trip.name %></td>
                   <td><%= site.name %></td>
-                  <td><%= site.city.name %></td>
+
+                  <td><%= site.city.name %>, <%# Country.find_by({ :id => city.country_id}).name %></td>
+
                   <td><%= site.type.name %></td>
                   <td>
                     <a href="/sites/<%= site.id %>" class="btn btn-primary">

@@ -55,9 +55,10 @@
                 <% @trip.sites.each do |site| %>
                   <tr>
                     <td><%= site.name %></td>
-                    <td><%= site.type %></td>
+                    <td><%= site.city.name %></td>
+                    <td><%= site.type.name %></td>
                     <td>
-                      <a href="/delete_site/<%= site.id %>" class="btn btn-sm btn-danger" rel="nofollow">
+                      <a href="/delete_site/<%= site.id %>" class="btn btn-sm btn-danger pull-right" rel="nofollow">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>

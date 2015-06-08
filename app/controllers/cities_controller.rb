@@ -13,6 +13,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new
+    @city.trip_id = params[:trip_id]
     @city.country_id = params[:country_id]
     @city.name = params[:name]
 
@@ -31,6 +32,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
 
     @city.country_id = params[:country_id]
+    @city.trip_id = params[:trip_id]
     @city.name = params[:name]
 
     if @city.save
