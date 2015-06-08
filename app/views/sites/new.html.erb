@@ -58,7 +58,7 @@
               City
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name, @site.city_id), :class => "form-control") %>
+              <%= select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name, @site.city_id), :class => "form-control") %>
             </div>
           </div>
 
@@ -68,7 +68,7 @@
               Type
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:type_id, options_from_collection_for_select(Type.all, :id, :name, @site.type_id), :class => "form-control") %>
+              <%= select_tag(:type_id, options_from_collection_for_select(Type.order(:name), :id, :name, @site.type_id), :class => "form-control") %>
             </div>
           </div>
 

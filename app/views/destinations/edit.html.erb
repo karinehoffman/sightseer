@@ -9,11 +9,15 @@
   <% end %>
 <% end %>
 
-<ol class="breadcrumb">
-  <li><a href="/trips">Trips</a></li>
-  <li><a href="/trips/<%= @destination.trip_id%>"><%= @destination.trip.name %></a></li>
-  <li class="active">Edit Country</li>
-</ol>
+<div class="row">
+  <div class="col-md-12">
+    <ol class="breadcrumb">
+      <li><a href="/trips">Trips</a></li>
+      <li><a href="/trips/<%= @destination.trip_id%>"><%= @destination.trip.name %></a></li>
+      <li class="active">Edit Country</li>
+    </ol>
+  </div>
+</div>
 
 <!-- Responsive panel example -->
 
@@ -36,7 +40,7 @@
               Country
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:country_id, options_from_collection_for_select(Country.all, :id, :name, @destination.country_id), :class => "form-control") %>
+              <%= select_tag(:country_id, options_from_collection_for_select(Country.order(:name), :id, :name, @destination.country_id), :class => "form-control") %>
             </div>
           </div>
 

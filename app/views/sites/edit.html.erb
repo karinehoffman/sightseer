@@ -9,11 +9,15 @@
   <% end %>
 <% end %>
 
-<ol class="breadcrumb">
-  <li><a href="/trips">Trips</a></li>
-  <li><a href="/trips/<%= @site.trip_id%>"><%= @site.trip.name %></a></li>
-  <li class="active">Edit Site</li>
-</ol>
+<div class="row">
+  <div class="col-md-12">
+    <ol class="breadcrumb">
+      <li><a href="/trips">Trips</a></li>
+      <li><a href="/trips/<%= @site.trip_id%>"><%= @site.trip.name %></a></li>
+      <li class="active">Edit Site</li>
+    </ol>
+  </div>
+</div>
 
 <!-- Responsive panel example -->
 
@@ -56,7 +60,7 @@
               City
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :name, @site.city_id), :class => "form-control") %>
+              <%= select_tag(:city_id, options_from_collection_for_select(City.order(:name), :id, :name, @site.city_id), :class => "form-control") %>
             </div>
           </div>
 
@@ -66,7 +70,7 @@
               Site Type
             </label>
             <div class="col-sm-10">
-              <%= select_tag(:type_id, options_from_collection_for_select(Type.all, :id, :name, @site.type_id), :class => "form-control") %>
+              <%= select_tag(:type_id, options_from_collection_for_select(Type.order(:name), :id, :name, @site.type_id), :class => "form-control") %>
             </div>
           </div>
 
