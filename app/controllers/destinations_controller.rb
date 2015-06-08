@@ -17,10 +17,9 @@ class DestinationsController < ApplicationController
     @destination.country_id = params[:country_id]
 
     if @destination.save
-
       redirect_to "/trips/#{@destination.trip_id}", :notice => "Destination created successfully."
     else
-      render 'new'
+      redirect_to "/trips/#{@destination.trip_id}", :notice => "Destination already exists."
     end
   end
 
@@ -33,11 +32,11 @@ class DestinationsController < ApplicationController
 
     @destination.trip_id = params[:trip_id]
     @destination.country_id = params[:country_id]
-##how to make it go back to trip detail??
+
     if @destination.save
-      redirect_to "/destinations", :notice => "Destination updated successfully."
+      redirect_to "/trips/#{@destination.trip_id}", :notice => "Destination updated successfully."
     else
-      render 'edit'
+      render 'edit', :notice => "Destination already exists."
     end
   end
 
@@ -46,6 +45,6 @@ class DestinationsController < ApplicationController
 
     @destination.destroy
 
-    redirect_to "/destinations", :notice => "Destination deleted."
+    redirect_to "/trips/#{@destination.trip_id}", :notice => "Destination deleted."
   end
 end

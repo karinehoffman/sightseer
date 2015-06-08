@@ -18,9 +18,9 @@ class CitiesController < ApplicationController
     @city.name = params[:name]
 
     if @city.save
-      redirect_to "/cities", :notice => "City created successfully."
+      redirect_to "/trips/#{@city.trip_id}", :notice => "City created successfully."
     else
-      render 'new'
+      redirect_to "/trips/#{@city.trip_id}", :notice => "City already exists."
     end
   end
 
@@ -36,7 +36,7 @@ class CitiesController < ApplicationController
     @city.name = params[:name]
 
     if @city.save
-      redirect_to "/cities", :notice => "City updated successfully."
+      redirect_to "/trips/#{@city.trip_id}", :notice => "City updated successfully."
     else
       render 'edit'
     end
@@ -47,6 +47,6 @@ class CitiesController < ApplicationController
 
     @city.destroy
 
-    redirect_to "/cities", :notice => "City deleted."
+    redirect_to "/trips/#{@city.trip_id}", :notice => "City deleted."
   end
 end

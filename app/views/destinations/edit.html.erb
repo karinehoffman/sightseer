@@ -1,4 +1,4 @@
-<!-- Validation failure messages -->
+  <!-- Validation failure messages -->
 
 <% if @destination.errors.any? %>
   <% @destination.errors.full_messages.each do |message| %>
@@ -9,28 +9,26 @@
   <% end %>
 <% end %>
 
+<ol class="breadcrumb">
+  <li><a href="/trips">Trips</a></li>
+  <li><a href="/trips/<%= @destination.trip_id%>"><%= @destination.trip.name %></a></li>
+  <li class="active">Edit Country</li>
+</ol>
+
 <!-- Responsive panel example -->
 
 <div class="row">
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Edit Destination #<%= @destination.id %></h3>
+        <h3 class="panel-title">Edit Country for <%= @destination.trip.name %> Trip</h3>
       </div>
       <div class="panel-body">
         <form action="/update_destination/<%= @destination.id %>" method="post" class="form-horizontal">
           <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-          <!-- Label and input for trip_id -->
-          <div class="form-group">
-            <label for="trip_id" class="col-sm-2 control-label">
-              Trip
-            </label>
-            <div class="col-sm-10">
-              <%= select_tag(:trip_id, options_from_collection_for_select(Trip.all, :id, :name, @destination.trip_id), :class => "form-control") %>
-            </div>
-          </div>
+          <input type="hidden" name="trip_id" value="<%= @destination.trip_id %>">
 
           <!-- Label and input for country_id -->
           <div class="form-group">
@@ -45,10 +43,10 @@
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button class="btn btn-warning">
-                Update Destination
+                Update Country
               </button>
               or
-              <a href="/destinations/<%= @destination.id %>">Cancel</a>
+              <a href="/trips/<%= @destination.trip_id%>">Cancel</a>
             </div>
           </div>
         </form>
